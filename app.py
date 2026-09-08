@@ -19,24 +19,24 @@ st.set_page_config(page_title="Retail Customer Intelligence", page_icon="◈", l
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root { --ink:#e9eef7; --muted:#8d9ab0; --line:#26344b; --panel:#111b2d; --accent:#6ee7d8; --purple:#9b8cff; }
-.stApp { background: radial-gradient(circle at 15% 0%, #1b2b46 0, #0b1220 34%, #08101c 100%); color:var(--ink); font-family:'DM Sans',sans-serif; }
+:root { --ink:#16243b; --muted:#64748b; --line:#dbe5ef; --panel:#ffffff; --accent:#0f9d91; --coral:#ef765f; }
+.stApp { background:linear-gradient(135deg,#f8fbff 0%,#eef7f5 53%,#fff8f2 100%); color:var(--ink); font-family:'DM Sans',sans-serif; }
 [data-testid="stHeader"] { background:transparent; }
-[data-testid="stSidebar"] { background:#09111f; border-right:1px solid var(--line); }
+[data-testid="stSidebar"] { background:rgba(255,255,255,.82); border-right:1px solid var(--line); }
 [data-testid="stSidebar"] * { font-family:'DM Sans',sans-serif; }
 h1,h2,h3 { font-family:'Space Grotesk',sans-serif !important; letter-spacing:-.03em; }
-h1 { font-size:3.1rem !important; margin-bottom:.25rem !important; }
-.hero { padding:1.5rem 0 1rem; }
+h1 { font-size:3.1rem !important; margin-bottom:.25rem !important; color:#16243b; }
+.hero { padding:1.5rem 1.8rem 1.15rem; border:1px solid #d8ece9; border-radius:24px; background:linear-gradient(115deg,rgba(255,255,255,.94),rgba(231,249,245,.8)); box-shadow:0 18px 45px rgba(37,86,104,.08); }
 .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.18em; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .subtitle { color:var(--muted); font-size:1.08rem; margin-bottom:1.7rem; }
-.kpi { background:linear-gradient(145deg,rgba(23,37,61,.92),rgba(13,23,40,.92)); border:1px solid var(--line); border-radius:18px; padding:1rem 1.15rem; box-shadow:0 14px 35px rgba(0,0,0,.16); }
+.kpi { background:rgba(255,255,255,.88); border:1px solid var(--line); border-radius:18px; padding:1rem 1.15rem; box-shadow:0 12px 28px rgba(45,75,100,.1); border-top:3px solid var(--accent); }
 .kpi-label { color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; }
 .kpi-value { color:var(--ink); font-family:'Space Grotesk'; font-size:1.65rem; font-weight:700; margin-top:.35rem; }
 .section-label { color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.7rem; font-weight:700; margin:1rem 0 .5rem; }
 div[data-baseweb="tab-list"] { gap:1.5rem; border-bottom:1px solid var(--line); }
 button[data-baseweb="tab"] { color:var(--muted); font-weight:600; }
 button[data-baseweb="tab"][aria-selected="true"] { color:var(--accent); }
-div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(15,26,44,.45); }
+div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.72); box-shadow:0 10px 24px rgba(45,75,100,.06); }
 .stCaption, [data-testid="stMarkdownContainer"] p { color:var(--muted); }
 </style>
 """, unsafe_allow_html=True)
@@ -81,14 +81,14 @@ def main():
             fig = px.scatter_3d(view, x="Recency", y="Frequency", z="Monetary", color="Segment", hover_data=["CustomerID"], log_z=True, title="Customer behavioral space")
         else:
             fig = px.scatter(view, x="Recency", y="Monetary", size="Frequency", color="Segment", hover_data=["CustomerID", "Frequency"], log_y=True, title="Recency versus customer value")
-        fig.update_layout(height=620, legend_title_text="Business segment", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(family="DM Sans", color="#e9eef7"), margin=dict(l=0,r=0,t=55,b=0))
-        fig.update_scenes(xaxis_title="Recency (days)", yaxis_title="Frequency", zaxis_title="Monetary (£)", bgcolor="rgba(0,0,0,0)", xaxis=dict(gridcolor="#26344b"), yaxis=dict(gridcolor="#26344b"), zaxis=dict(gridcolor="#26344b"))
+        fig.update_layout(height=620, legend_title_text="Business segment", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,.3)", font=dict(family="DM Sans", color="#16243b"), margin=dict(l=0,r=0,t=55,b=0), colorway=["#0f9d91", "#ef765f", "#5574d9", "#e2a93b"])
+        fig.update_scenes(xaxis_title="Recency (days)", yaxis_title="Frequency", zaxis_title="Monetary (£)", bgcolor="rgba(255,255,255,.2)", xaxis=dict(gridcolor="#dbe5ef"), yaxis=dict(gridcolor="#dbe5ef"), zaxis=dict(gridcolor="#dbe5ef"))
         st.plotly_chart(fig, use_container_width=True)
         left, right = st.columns(2)
         with left:
             counts = view.groupby("Segment", as_index=False).size().rename(columns={"size": "Customers"})
             bar = px.bar(counts, y="Segment", x="Customers", color="Segment", orientation="h", title="Customers by segment")
-            bar.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(family="DM Sans", color="#e9eef7"), margin=dict(l=0,r=0,t=55,b=0), showlegend=False)
+            bar.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,.3)", font=dict(family="DM Sans", color="#16243b"), margin=dict(l=0,r=0,t=55,b=0), showlegend=False)
             st.plotly_chart(bar, use_container_width=True)
         with right:
             st.dataframe(view.groupby("Segment")[RFM_COLUMNS].agg(["count", "median", "mean"]).round(2), use_container_width=True, height=300)
