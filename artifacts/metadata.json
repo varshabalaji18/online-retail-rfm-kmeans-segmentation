@@ -1,0 +1,22 @@
+{
+  "rfm_columns": [
+    "Recency",
+    "Frequency",
+    "Monetary"
+  ],
+  "snapshot_date": "2011-12-10T00:00:00",
+  "n_clusters": 2,
+  "random_state": 42,
+  "input_file": "Online Retail.xlsx",
+  "input_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "selection_rule": "maximum sampled silhouette over k=2..6",
+  "currency": "GBP for UCI; synthetic units for generated data",
+  "monetary_definition": "gross positive purchase value, excluding returns; not profit or net revenue",
+  "python_version": "3.12.14",
+  "package_versions": {
+    "pandas": "3.0.5",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.6.0"
+  }
+}

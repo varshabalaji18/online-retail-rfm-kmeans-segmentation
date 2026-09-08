@@ -1,0 +1,9 @@
+{
+  "raw_rows": 541909,
+  "missing_required_or_blank_invoice": 135080,
+  "cancelled_rows": 8905,
+  "invalid_or_nonpositive_sales": 40,
+  "exact_duplicate_rows": 5192,
+  "retained_rows": 392692,
+  "rows_at_or_after_cutoff": 0
+}
