@@ -19,24 +19,27 @@ st.set_page_config(page_title="Retail Customer Intelligence", page_icon="◈", l
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root { --ink:#16243b; --muted:#64748b; --line:#dbe5ef; --panel:#ffffff; --accent:#0f9d91; --coral:#ef765f; }
-.stApp { background:linear-gradient(135deg,#f8fbff 0%,#eef7f5 53%,#fff8f2 100%); color:var(--ink); font-family:'DM Sans',sans-serif; }
+:root { --ink:#152238; --muted:#687a92; --line:#d3e0ed; --accent:#21c7ba; --coral:#ff8068; }
+.stApp { background:radial-gradient(circle at 8% 8%,#dceefa 0,#f4f8fc 32%,#eaf3f1 68%,#fff5eb 100%); color:var(--ink); font-family:'DM Sans',sans-serif; }
 [data-testid="stHeader"] { background:transparent; }
-[data-testid="stSidebar"] { background:rgba(255,255,255,.82); border-right:1px solid var(--line); }
+[data-testid="stSidebar"] { background:linear-gradient(180deg,#10213a 0%,#142a45 58%,#0c1a30 100%); border-right:1px solid #203b5d; }
+[data-testid="stSidebar"] h2, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label, [data-testid="stSidebar"] [data-testid="stMetricLabel"] { color:#c9d7e8 !important; }
+[data-testid="stSidebar"] [data-testid="stMetricValue"] { color:#ffffff !important; }
 [data-testid="stSidebar"] * { font-family:'DM Sans',sans-serif; }
 h1,h2,h3 { font-family:'Space Grotesk',sans-serif !important; letter-spacing:-.03em; }
-h1 { font-size:3.1rem !important; margin-bottom:.25rem !important; color:#16243b; }
-.hero { padding:1.5rem 1.8rem 1.15rem; border:1px solid #d8ece9; border-radius:24px; background:linear-gradient(115deg,rgba(255,255,255,.94),rgba(231,249,245,.8)); box-shadow:0 18px 45px rgba(37,86,104,.08); }
+h1 { font-size:3.1rem !important; margin-bottom:.25rem !important; color:#ffffff; }
+.hero { padding:1.65rem 1.9rem 1.3rem; border:1px solid #284c72; border-radius:24px; background:radial-gradient(circle at 90% 10%,#1c7a82 0,#142a48 37%,#0d1c32 100%); box-shadow:0 20px 48px rgba(16,42,68,.24); position:relative; overflow:hidden; }
+.hero:after { content:''; position:absolute; width:180px; height:180px; right:8%; top:-90px; border-radius:50%; background:rgba(33,199,186,.22); filter:blur(3px); }
 .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.18em; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
-.subtitle { color:var(--muted); font-size:1.08rem; margin-bottom:1.7rem; }
-.kpi { background:rgba(255,255,255,.88); border:1px solid var(--line); border-radius:18px; padding:1rem 1.15rem; box-shadow:0 12px 28px rgba(45,75,100,.1); border-top:3px solid var(--accent); }
-.kpi-label { color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; }
+.subtitle { color:#b7c9dc; font-size:1.08rem; margin-bottom:1.7rem; }
+.kpi { background:linear-gradient(145deg,#ffffff 0%,#eaf6f7 100%); border:1px solid #c2d9e5; border-radius:18px; padding:1rem 1.15rem; box-shadow:0 14px 28px rgba(35,71,104,.14); border-top:4px solid var(--accent); }
+.kpi-label { color:#58708a; font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; font-weight:700; }
 .kpi-value { color:var(--ink); font-family:'Space Grotesk'; font-size:1.65rem; font-weight:700; margin-top:.35rem; }
 .section-label { color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.7rem; font-weight:700; margin:1rem 0 .5rem; }
 div[data-baseweb="tab-list"] { gap:1.5rem; border-bottom:1px solid var(--line); }
 button[data-baseweb="tab"] { color:var(--muted); font-weight:600; }
 button[data-baseweb="tab"][aria-selected="true"] { color:var(--accent); }
-div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.72); box-shadow:0 10px 24px rgba(45,75,100,.06); }
+div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] { border:1px solid #c5d7e5; border-radius:16px; overflow:hidden; background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(232,242,248,.82)); box-shadow:0 14px 30px rgba(40,75,106,.11); }
 .stCaption, [data-testid="stMarkdownContainer"] p { color:var(--muted); }
 </style>
 """, unsafe_allow_html=True)
