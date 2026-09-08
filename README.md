@@ -62,8 +62,9 @@ Tenure and acquisition timing affect frequency/spend; unidentified customers and
 Segments summarize behavior. They do not estimate churn probability or prove campaign revenue lift.
 Temporal backtesting, treatment/control experiments, and supervised churn modeling are outside Day 1.
 
-Day 2: reviewed segment labels, Streamlit explorer, guarded customer scoring, 2D/3D plots,
-dashboard tests, screenshots, and a verified deployment link.
+Day 2 adds the Streamlit explorer, guarded customer scoring, 2D/3D plots, model evidence,
+CSV download, and business action guidance. Run locally with `streamlit run app.py` after training.
+Public deployment link: pending Streamlit Community Cloud deployment.
 
 ## Data credit
 
@@ -71,4 +72,3 @@ Chen, D. (2015). **Online Retail**, UCI Machine Learning Repository.
 [Dataset and CC BY 4.0 license](https://archive.ics.uci.edu/dataset/352/online+retail).
 [DOI: 10.24432/C5BW33](https://doi.org/10.24432/C5BW33).
 The raw workbook is downloaded locally and excluded from Git.
-
