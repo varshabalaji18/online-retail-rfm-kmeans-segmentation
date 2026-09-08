@@ -64,7 +64,7 @@ Temporal backtesting, treatment/control experiments, and supervised churn modeli
 
 Day 2 adds the Streamlit explorer, guarded customer scoring, 2D/3D plots, model evidence,
 CSV download, and business action guidance. Run locally with `streamlit run app.py` after training.
-Public deployment link: pending Streamlit Community Cloud deployment.
+Public deployment link: https://9m6lwof6hxjytvgqw4fah5.streamlit.app/
 
 ## Data credit
 
@@ -72,3 +72,4 @@ Chen, D. (2015). **Online Retail**, UCI Machine Learning Repository.
 [Dataset and CC BY 4.0 license](https://archive.ics.uci.edu/dataset/352/online+retail).
 [DOI: 10.24432/C5BW33](https://doi.org/10.24432/C5BW33).
 The raw workbook is downloaded locally and excluded from Git.
+
